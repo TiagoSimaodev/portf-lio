@@ -66,15 +66,22 @@
 }
 
 .container {
-  padding-top: 100px; 
+  max-width: 1200px;    /* limite de largura do conteúdo */
+  margin: 0 auto;       /* centraliza horizontalmente */
+  padding: 0 16px;      /* espaço interno nas laterais */
+  box-sizing: border-box;
 }
+
 
 /* Responsividade geral */
 @media (max-width: 880px) {
-  .hero, .two-col {
-    grid-template-columns: 1fr; /* mobile: empilha vertical */
+  .projects, .cards {
+    grid-template-columns: 1fr; /* empilha vertical */
     gap: 16px;
+    justify-content: stretch;   /* ocupa toda a largura */
   }
+}
+
 
   .avatar {
     width: 64px;
@@ -90,10 +97,13 @@
     gap: 12px;
   }
 
-  .project, .card {
-    width: 100%;
-    max-width: 100%;
-  }
+ .projects, .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* itens flexíveis */
+  gap: 24px;                /* espaço entre cards */
+  justify-content: center;  /* centraliza os cards quando cabem menos colunas */
+}
+
 
   input, textarea {
     font-size: 16px;
