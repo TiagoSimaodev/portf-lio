@@ -37,7 +37,8 @@
     .skills{display:flex;flex-wrap:wrap;gap:8px}
     footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
 
-    .avatar {
+   /* Avatar */
+.avatar {
   width: 72px;
   height: 72px;
   border-radius: 50%;
@@ -45,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: none; /* remove o gradiente azul */
+  background: none;
 }
 
 .avatar img {
@@ -55,6 +56,7 @@
   display: block;
 }
 
+/* Hero Desktop */
 .hero {
   display: grid;
   grid-template-columns: 1fr 320px; /* desktop */
@@ -62,20 +64,45 @@
   align-items: center;
 }
 
-@media(max-width: 880px){
-  .hero {
-    grid-template-columns: 1fr; /* mobile */
-  }
+.container {
+  padding-top: 100px; 
 }
 
-@media(max-width: 600px) {
+/* Responsividade geral */
+@media (max-width: 880px) {
+  .hero, .two-col {
+    grid-template-columns: 1fr; /* mobile: uma coluna */
+    gap: 16px;
+  }
+
   .avatar {
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
   }
 
   .hero h1 {
     font-size: 22px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr; /* projetos em linha única */
+    gap: 12px;
+  }
+
+  .project, .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  input, textarea {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .avatar {
+    width: 50px;
+    height: 50px;
   }
 
   .stack {
@@ -83,19 +110,6 @@
     flex-wrap: wrap;
   }
 }
-
-
-
-.container {
-  padding-top: 100px; 
-}
-
-
-
-
-
-    /* responsive */
-    @media(max-width:880px){.hero,.two-col{grid-template-columns:1fr}.avatar{width:64px;height:64px}}
 
     /* simple modal */
     .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:60}
