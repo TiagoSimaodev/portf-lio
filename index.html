@@ -37,9 +37,10 @@
     .skills{display:flex;flex-wrap:wrap;gap:8px}
     footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
 
-  /* Avatar corrigido */
+   /* Avatar */
 .avatar {
-  width: 72px;
+  max-width: 72vw;
+  width: 72vw;
   height: 72px;
   border-radius: 50%;
   overflow: hidden;
@@ -47,31 +48,89 @@
   align-items: center;
   justify-content: center;
   background: none;
-  margin: 0 auto; /* centraliza */
 }
 
 .avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* Impede o hero de esticar para baixo */
+/* Hero Desktop */
 .hero {
-  align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 320px; /* desktop */
+  gap: 24px;
+  align-items: center;
 }
 
-/* Garante que a coluna do avatar nunca estique o conteúdo */
-.hero > * {
-  min-height: auto;
+.container {
+  padding-top: 100px; 
 }
 
-/* Impede cards de crescerem por causa do header */
-.card, .project {
-  height: auto !important;
+/* Responsividade geral */
+@media (max-width: 880px) {
+  .hero, .two-col {
+    grid-template-columns: 1fr; /* mobile: uma coluna */
+    gap: 16px;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr; /* projetos em linha única */
+    gap: 12px;
+  }
+
+  .project, .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  input, textarea {
+    font-size: 16px;
+  }
 }
 
+@media (max-width: 600px) {
+  .avatar {
+    width: 50px;
+    height: 50px;
+  }
 
+  .stack {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+header, .hero {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* GARANTE QUE NADA DO HEADER PASSE DOS LIMITES */
+header * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* AJUSTA GRID EM CELULAR PARA NÃO ESTOURAR */
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
 
 
     /* simple modal */
