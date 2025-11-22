@@ -37,10 +37,9 @@
     .skills{display:flex;flex-wrap:wrap;gap:8px}
     footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
 
-   /* Avatar */
+  /* Avatar corrigido */
 .avatar {
-  max-width: 72vw;
-  width: 72vw;
+  width: 72px;
   height: 72px;
   border-radius: 50%;
   overflow: hidden;
@@ -48,69 +47,32 @@
   align-items: center;
   justify-content: center;
   background: none;
+  margin: 0 auto; /* centraliza */
 }
 
 .avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* Hero Desktop */
+/* Impede o hero de esticar para baixo */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 320px; /* desktop */
-  gap: 24px;
-  align-items: center;
+  align-items: start;
 }
 
-.container {
-  padding-top: 100px; 
+/* Garante que a coluna do avatar nunca estique o conteúdo */
+.hero > * {
+  min-height: auto;
 }
 
-/* Responsividade geral */
-@media (max-width: 880px) {
-  .hero, .two-col {
-    grid-template-columns: 1fr; /* mobile: uma coluna */
-    gap: 16px;
-  }
-
-  .avatar {
-    width: 64px;
-    height: 64px;
-  }
-
-  .hero h1 {
-    font-size: 22px;
-  }
-
-  .projects {
-    grid-template-columns: 1fr; /* projetos em linha única */
-    gap: 12px;
-  }
-
-  .project, .card {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  input, textarea {
-    font-size: 16px;
-  }
+/* Impede cards de crescerem por causa do header */
+.card, .project {
+  height: auto !important;
 }
 
-@media (max-width: 600px) {
-  .avatar {
-    width: 50px;
-    height: 50px;
-  }
 
-  .stack {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-}
+
 
     /* simple modal */
     .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:60}
