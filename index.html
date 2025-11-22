@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tiago Simao — Software Developer</title>
+  <meta name="description" content="Portfólio de Tiago Simao — Desenvolvedor Java Full Stack | Spring Boot, JPA, Hibernate, Angular, Docker." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.45;background:linear-gradient(180deg,#071024 0%, #081226 60%);color:#e6eef6}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:980px;margin:32px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+    .brand{display:flex;gap:16px;align-items:center}
+    .avatar{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;color:#04212a}
+    nav ul{display:flex;gap:12px;list-style:none;padding:0;margin:0}
+    nav a{padding:8px 12px;border-radius:8px;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:center;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px}
+    .hero h1{margin:0;font-size:28px}
+    .hero p{color:var(--muted);margin-top:8px}
+    .stack{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .chip{padding:8px 10px;background:var(--glass);border-radius:10px;font-weight:600;color:var(--muted);font-size:13px}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.014), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
+    .project{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);min-height:120px;display:flex;flex-direction:column;justify-content:space-between}
+    .project h4{margin:0 0 8px 0}
+    .project .tech{font-size:12px;color:var(--muted)}
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;background:var(--accent);color:#032029;font-weight:700}
+
+    .two-col{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px}
+    .timeline{list-style:none;padding:0;margin:0}
+    .timeline li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
+
+    .avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none; /* remove o gradiente azul */
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+    /* responsive */
+    @media(max-width:880px){.hero,.two-col{grid-template-columns:1fr}.avatar{width:64px;height:64px}}
+
+    /* simple modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:60}
+    .modal.open{display:flex}
+    .modal .inner{width:min(880px,96%);background:#071326;padding:18px;border-radius:12px}
+    .close{float:right;background:transparent;border:0;color:var(--muted);font-weight:700;font-size:18px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar">
+   <img src="https://media.licdn.com/dms/image/v2/D4D03AQG5ekAXVRrnMw/profile-displayphoto-scale_100_100/B4DZp6zknoKUAg-/0/1762996933094?e=1765411200&v=beta&t=9gVVok29Yb-jVp4g9rI9L36BV5bXNxamgz5B4oR6Sdk" alt="Foto de Tiago" />
+  </div>
+   <!-- DIV DO LADO DO AVATAR -->
+    <div style="display:flex; flex-direction:column; justify-content:center; margin-left:12px;">
+      <div style="font-weight:800">Tiago Simao</div>
+      <div style="color:var(--muted); font-size:13px">tiagosimaodev</div> <!-- GitHub ou LinkedIn -->
+    </div>
+
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#experience">Experiência</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home" class="hero card">
+      <div>
+        <h1>Olá — eu sou o Tiago. <span style="color:var(--accent)">Desenvolvedor Java Full Stack</span></h1>
+        <p>Olá! Eu sou Tiago Simão, Desenvolvedor Java Full Stack.
+Atuo no desenvolvimento de aplicações utilizando Java, Spring Boot, JPA/Hibernate, REST APIs, e integrações com bancos de dados como PostgreSQL e MySQL.
+
+Também trabalho com front-end usando Thymeleaf, JavaScript e Angular, construindo interfaces funcionais, responsivas e integradas ao back-end.
+Tenho foco em boas práticas, organização de código, testes e arquitetura limpa.
+
+Busco sempre entregar soluções escaláveis, seguras e com boa experiência para o usuário.</p>
+
+        <div class="stack">
+          <div class="chip">Java 17</div>
+          <div class="chip">Spring Boot</div>
+          <div class="chip">Rabbitmq</div>
+          <div class="chip">AWS</div>
+          <div class="chip">PostgreSQL</div>
+          <div class="chip">Docker</div>
+          <div class="chip">Angular</div>
+        </div>
+
+        <p style="margin-top:12px;color:var(--muted)">Quer ver meus projetos? Role até a seção <strong>Projetos</strong> ou abra um dos cards.</p>
+
+        <div style="margin-top:12px">
+          <a class="btn" href="#projects">Ver projetos</a>
+        </div>
+      </div>
+
+      <aside class="card" style="height:100%">
+        <h3 style="margin-top:0">Contato</h3>
+        <p style="color:var(--muted);margin-top:6px">Tiago Simão — Software Developer</p>
+        <p style="margin:6px 0;color:var(--muted)"><strong>Email:</strong> tiagosimao.dev@gmail.com</p>
+        <p style="margin:6px 0;color:var(--muted)"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tiagosimaodev/" target="_blank">tiago-simao</a></p>
+        <p style="margin:6px 0;color:var(--muted)"><strong>GitHub:</strong> <a href="https://github.com/TiagoSimaodev" target="_blank">TiagoSimaodev</a></p>
+        <div style="margin-top:12px">
+          <a class="btn" href="#contact">Enviar mensagem</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" style="margin-top:18px">
+      <h2 style="margin:0 0 12px 0">Projetos em destaque</h2>
+      <div class="projects">
+        <article class="project" data-repo="https://github.com/TiagoSimaodev/Sistema-de-Cadastro-com-Spring-Boot-Thymeleaf-e-Spring-Security" data-title="Sistema de Cadastro" data-desc="Este projeto é uma aplicação web completa desenvolvida com Spring Boot, seguindo a arquitetura MVC, utilizando Thymeleaf para renderização de páginas, Spring Data JPA para persistência no banco de dados, Spring Security para autenticação/autorização, Materialize CSS para o design responsivo, além de integração com Web Services REST, upload de arquivos, relatórios PDF com JasperReports, validações client/server, paginação e muito mais." data-tech="Java, Spring Boot, Spring MVC, Spring Data JPA, Spring Security, Thymeleaf, PostgreSQL, Hibernate, Materialize, JavaScript e AJAX, JasperReports, API ViaCep, lombok, maven">
+          <div>
+            <h4>Sistema de Cadastro</h4>
+            <div class="tech">Java, Spring Boot, Spring MVC, Spring Data JPA, Spring Security, Thymeleaf, PostgreSQL, Hibernate, Materialize, JavaScript e AJAX, JasperReports, API ViaCep, lombok, maven</div>
+          </div>
+          <div style="margin-top:12px">
+            <button class="btn open-project">Ver</button>
+          </div>
+        </article>
+
+        <article class="project" data-repo="https://github.com/TiagoSimaodev/API-REST-RESTful-Microservi-o-Spring-Security-JWT" data-title="API-REST-RESTful-Microservi-o-Spring-Security-JWT" data-desc="Uma aplicação backend robusta desenvolvida com Spring Boot, projetada para demonstrar boas práticas em arquitetura RESTful, microsserviços e segurança com JWT.
+
+Este projeto serve como base para sistemas modernos que exigem autenticação segura, escalabilidade e integração com aplicações front-end." data-tech="Java 17, Spring boot, Spring web, Spring data Jpa, Spring Security + jwt, Hibernate (ORM), PostgreSQL, Maven, Junit 5 (Teste Unitários), Lombok">
+
+          <div>
+            <h4>API-REST-RESTful-Microservi-o-Spring-Security-JWT</h4>
+            <div class="tech">Java 17, Spring boot, Spring web, Spring data Jpa, Spring Security + jwt, Hibernate (ORM), PostgreSQL, Maven, Junit 5 (Teste Unitários), Lombok</div>
+          </div>
+          <div style="margin-top:12px">
+            <button class="btn open-project">Ver</button>
+          </div>
+        </article>
+
+        <article class="project" data-repo="https://github.com/TiagoSimaodev/loja_virtual-?tab=readme-ov-file#loja-virtual---backend" data-title="Loja-Virtual" data-desc="API backend de uma Loja Virtual desenvolvida em Java com Spring Boot, projetada para gerenciar clientes, produtos, pedidos e regras de negócio. A aplicação segue arquitetura em camadas (Controller, Service, Repository), com segurança, validações, testes e agendamentos, pronta para integração com frontend ou outros sistemas." data-tech="Java, SpringBoot, Spring data Jpa, Spring Security, JUnit / mockito, Flyway, PostgreSQL / PLpqSql, maven">
+          <div>
+            <h4>Loja-Virtual</h4>
+            <div class="tech">Java, SpringBoot, Spring data Jpa, Spring Security, JUnit / mockito, Flyway, PostgreSQL / PLpqSql, maven</div>
+          </div>
+          <div style="margin-top:12px">
+            <button class="btn open-project">Ver</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="two-col">
+      <div>
+        <h2>Experiência profissional</h2>
+        <ul class="timeline card" style="margin-top:12px">
+          <li>
+            <strong>Desenvolvedor Java — Freelancer</strong>
+            <div style="color:var(--muted);font-size:13px">2023 — Presente</div>
+            <p style="margin:6px 0;color:var(--muted)">Atuo no desenvolvimento de aplicações web completas utilizando Java e Spring Boot, com foco em performance, escalabilidade e segurança. Responsável por projetar e implementar soluções que automatizam processos, reduzem custos e aumentam a eficiência operacional.</p>
+            <p style="margin:6px 0;color:var(--muted)">Principais Contribuições:</p>
+            <p style="margin:6px 0;color:var(--muted)">• Reduzi erros operacionais em 70% ao automatizar fluxos de compra e pagamento com Spring Boot, JPA/Hibernate e integração com API de pagamento (Pix via Juno).</p>
+            <p style="margin:6px 0;color:var(--muted)">• Aumentei a performance das consultas em 60% ao otimizar queries SQL e implementar relatórios dinâmicos corporativos com JasperReports.</p>
+            <p style="margin:6px 0;color:var(--muted)">• Melhorei a escalabilidade e segurança de APIs RESTful através da implementação de Spring Security (JWT), padronização de camadas com DTOs e controle de versão com Flyway.</p>
+            <p style="margin:6px 0;color:var(--muted)">• Reduzi em 40% o tempo de preenchimento de formulários ao integrar APIs externas (ViaCEP) e desenvolver interfaces responsivas com Thymeleaf, JavaScript e Bootstrap.</p>
+            <p style="margin:6px 0;color:var(--muted)">• Aumentei a confiabilidade nas entregas implementando pipelines de CI/CD e versionamento com Git, GitHub e AWS.
+</p>
+            <p style="margin:6px 0;color:var(--muted)">• Elevei a estabilidade do código ao aplicar testes automatizados com JUnit, Mockito e TDD, garantindo maior cobertura e menor índice de regressões.</p>
+          </li>
+        
+        </ul>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-top:0">Competências</h3>
+        <div class="skills" style="margin-top:10px">
+          <div class="chip">Spring Boot</div>
+          <div class="chip">REST API</div>
+          <div class="chip">Rabbitmq</div>
+          <div class="chip">AWS</div>
+          <div class="chip">PostgreSQL</div>
+          <div class="chip">Thymeleaf</div>
+          <div class="chip">Docker</div>
+          <div class="chip">JUnit</div>
+        </div>
+
+        <h3 style="margin-top:18px">Formação</h3>
+        <p style="color:var(--muted);margin-top:6px">Análise e Desenvolvimento de Sistemas — (concluído) <br/>Ciência da Computação - (cursando) <br/> Inglês Fluency Academy (cursando)</p>
+      </aside>
+    </section>
+
+    <section id="contact" style="margin-top:18px">
+      <div class="card">
+        <h2>Fale comigo</h2>
+        <p style="color:var(--muted)">Quer conversar sobre uma vaga, projeto ou parceria? Me envie uma mensagem.</p>
+        <form id="contactForm" style="margin-top:12px;display:grid;gap:8px">
+          <input name="name" placeholder="Seu nome" required style="padding:10px;border-radius:8px;border:0;background:#061122;color:#e6eef6" />
+          <input name="email" placeholder="Seu email" required style="padding:10px;border-radius:8px;border:0;background:#061122;color:#e6eef6" />
+          <textarea name="message" placeholder="Mensagem" rows="4" style="padding:10px;border-radius:8px;border:0;background:#061122;color:#e6eef6"></textarea>
+          <div><button class="btn" type="submit">Enviar</button></div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Tiago Simao — Software Developer
+    </footer>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="inner">
+      <button class="close" id="closeModal">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  
+  <!-- Biblioteca EmailJS deve vir antes do seu script -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+  // smooth scroll for nav
+  document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // open project modal
+  document.querySelectorAll('.open-project').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const article = e.target.closest('.project');
+      const title = article.dataset.title;
+      const desc = article.dataset.desc;
+      const tech = article.dataset.tech;
+      const repo = article.dataset.repo;
+
+      const html = `
+        <h3 style="margin-top:0">${title}</h3>
+        <p style="color:var(--muted)">${desc}</p>
+        <p style="margin-top:8px;font-size:13px;color:var(--muted)">
+          <strong>Tecnologias:</strong> ${tech}
+        </p>
+        <p style="margin-top:12px">
+          <a class='btn' href='${repo}' target='_blank'>Ver repositório</a>
+        </p>`;
+      
+      document.getElementById('modalContent').innerHTML = html;
+      document.getElementById('modal').classList.add('open');
+    });
+  });
+
+  document.getElementById('closeModal').addEventListener('click', () => {
+    document.getElementById('modal').classList.remove('open');
+  });
+
+  // Inicializa o EmailJS com a chave pública
+  emailjs.init('R6RfDGl_bkIusIPWL');
+
+  // Manipulador do formulário de contato
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_665k285', 'template_wss0zx8', this)
+      .then(() => {
+        const name = this.name.value;
+        alert('Obrigado, ' + (name || 'amigo') + '! Sua mensagem foi enviada. Verifique seu e-mail!');
+        this.reset();
+      })
+      .catch((err) => {
+        console.error('Erro ao enviar:', err);
+        alert('Ops! Ocorreu um erro ao enviar sua mensagem.');
+      });
+  });
+</script>
+
+</body>
+</html>
