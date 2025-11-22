@@ -36,11 +36,10 @@
     .timeline li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
     .skills{display:flex;flex-wrap:wrap;gap:8px}
     footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
-
-   /* Avatar */
+/* Avatar */
 .avatar {
-  max-width: 7px;
-  width: 72vw;
+  width: 72px;          /* tamanho padrão desktop */
+  max-width: 100%;      /* não extrapola o container */
   height: 72px;
   border-radius: 50%;
   overflow: hidden;
@@ -57,12 +56,13 @@
   display: block;
 }
 
-/* Hero Desktop */
+/* Hero / Grid Desktop */
 .hero {
   display: grid;
-  grid-template-columns: repeat(auto-fit) 1fr 250px; /* desktop */
+  grid-template-columns: 1fr 250px; /* coluna flexível + coluna fixa */
   gap: 24px;
   align-items: center;
+  padding: 1rem;
 }
 
 .container {
@@ -72,7 +72,7 @@
 /* Responsividade geral */
 @media (max-width: 880px) {
   .hero, .two-col {
-    grid-template-columns: 1fr; /* mobile: uma coluna */
+    grid-template-columns: 1fr; /* mobile: empilha vertical */
     gap: 16px;
   }
 
@@ -86,7 +86,7 @@
   }
 
   .projects {
-    grid-template-columns: 1fr; /* projetos em linha única */
+    grid-template-columns: 1fr; /* projetos em coluna única */
     gap: 12px;
   }
 
@@ -107,10 +107,39 @@
   }
 
   .stack {
+    display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hero h1 {
+    font-size: 18px;
+  }
+
+  .hero h2, .hero h3 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
   }
 }
+
+/* Botões, inputs e elementos gerais */
+button, input, textarea {
+  font-family: inherit;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
 
     /* simple modal */
     .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:60}
