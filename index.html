@@ -37,12 +37,11 @@
     .skills{display:flex;flex-wrap:wrap;gap:8px}
     footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
 
-  /* Avatar */
+   /* Avatar */
 .avatar {
-  width: 12vw; /* largura relativa à tela */
-  max-width: 72px; /* limite máximo para telas maiores */
-  height: auto;
-  aspect-ratio: 1 / 1; /* mantém quadrado */
+  max-width: 7px;
+  width: 72vw;
+  height: 72px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -58,43 +57,58 @@
   display: block;
 }
 
-/* Hero / Grid */
+/* Hero Desktop */
 .hero {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem; /* espaço entre colunas */
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fit) 1fr 250px; /* desktop */
+  gap: 24px;
   align-items: center;
 }
 
-/* Títulos e textos */
-h1, h2, h3, p {
-  margin: 0.5rem 0;
-  word-wrap: break-word;
+.container {
+  padding-top: 100px; 
 }
 
-/* Ajustes para mobile */
-@media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr; /* empilha verticalmente */
-    gap: 0.75rem;
+/* Responsividade geral */
+@media (max-width: 880px) {
+  .hero, .two-col {
+    grid-template-columns: 1fr; /* mobile: uma coluna */
+    gap: 16px;
   }
 
   .avatar {
-    width: 20vw;
-    max-width: 60px;
+    width: 64px;
+    height: 64px;
   }
 
-  h1 {
-    font-size: 1.5rem;
+  .hero h1 {
+    font-size: 22px;
   }
 
-  h2, h3 {
-    font-size: 1.2rem;
+  .projects {
+    grid-template-columns: 1fr; /* projetos em linha única */
+    gap: 12px;
   }
 
-  p {
-    font-size: 1rem;
+  .project, .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  input, textarea {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stack {
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 }
 
