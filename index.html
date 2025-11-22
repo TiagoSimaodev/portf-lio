@@ -36,10 +36,11 @@
     .timeline li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
     .skills{display:flex;flex-wrap:wrap;gap:8px}
     footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
-/* Avatar */
+
+   /* Avatar */
 .avatar {
-  width: 72px;          /* tamanho padrão desktop */
-  max-width: 100%;      /* não extrapola o container */
+  max-width: 72vw;
+  width: 72vw;
   height: 72px;
   border-radius: 50%;
   overflow: hidden;
@@ -56,32 +57,24 @@
   display: block;
 }
 
-/* Hero / Grid Desktop */
+/* Hero Desktop */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 250px; /* coluna flexível + coluna fixa */
+  grid-template-columns: 1fr 320px; /* desktop */
   gap: 24px;
   align-items: center;
-  padding: 1rem;
 }
 
 .container {
-  max-width: 1200px;    /* limite de largura do conteúdo */
-  margin: 0 auto;       /* centraliza horizontalmente */
-  padding: 0 16px;      /* espaço interno nas laterais */
-  box-sizing: border-box;
+  padding-top: 100px; 
 }
-
 
 /* Responsividade geral */
 @media (max-width: 880px) {
-  .projects, .cards {
-    grid-template-columns: 1fr; /* empilha vertical */
+  .hero, .two-col {
+    grid-template-columns: 1fr; /* mobile: uma coluna */
     gap: 16px;
-    justify-content: stretch;   /* ocupa toda a largura */
   }
-}
-
 
   .avatar {
     width: 64px;
@@ -93,17 +86,14 @@
   }
 
   .projects {
-    grid-template-columns: 1fr; /* projetos em coluna única */
+    grid-template-columns: 1fr; /* projetos em linha única */
     gap: 12px;
   }
 
- .projects, .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* itens flexíveis */
-  gap: 24px;                /* espaço entre cards */
-  justify-content: center;  /* centraliza os cards quando cabem menos colunas */
-}
-
+  .project, .card {
+    width: 100%;
+    max-width: 100%;
+  }
 
   input, textarea {
     font-size: 16px;
@@ -117,39 +107,10 @@
   }
 
   .stack {
-    display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .hero h1 {
-    font-size: 18px;
-  }
-
-  .hero h2, .hero h3 {
-    font-size: 16px;
-  }
-
-  p {
-    font-size: 14px;
   }
 }
-
-/* Botões, inputs e elementos gerais */
-button, input, textarea {
-  font-family: inherit;
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-button:hover {
-  cursor: pointer;
-  opacity: 0.9;
-}
-
 
     /* simple modal */
     .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:60}
